@@ -1,0 +1,6 @@
+package com.givinification.elretorno
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}

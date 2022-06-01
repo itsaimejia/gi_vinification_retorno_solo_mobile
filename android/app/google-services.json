@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "94569713095",
+    "project_id": "givinificationelretorno",
+    "storage_bucket": "givinificationelretorno.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94569713095:android:05c03731e221a460d55de2",
+        "android_client_info": {
+          "package_name": "com.givinification.elretorno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94569713095-il45e3kih5m7h7pchhqvfmrj3mt62alu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHUcNMaOG2lgqZEIPmJX1xsV1PjdwXmKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94569713095-il45e3kih5m7h7pchhqvfmrj3mt62alu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

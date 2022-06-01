@@ -1,0 +1,10 @@
+^C:\USERS\ITSAI\DESKTOP\GI_VINIFICATION_RETORNO\BUILD\WINDOWS\CMAKEFILES\6E14DD73DC999AA2BF5853CA47F0C458\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/itsai/Desktop/gi_vinification_retorno/windows -BC:/Users/itsai/Desktop/gi_vinification_retorno/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/itsai/Desktop/gi_vinification_retorno/build/windows/gi_vinification_retorno.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
