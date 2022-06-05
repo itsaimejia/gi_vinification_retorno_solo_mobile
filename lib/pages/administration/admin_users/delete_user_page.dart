@@ -35,44 +35,39 @@ class _DeleteUserPageState extends State<DeleteUserPage> {
         children: [
           TableRow(children: [
             Center(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 250,
-                  child: Tooltip(
-                    preferBelow: true,
-                    message: 'Correo',
-                    child: DataInput(
-                      icon: mediaWidth > 820 ? Icons.search : null,
-                      color: primaryColor,
-                      labelText: 'Correo',
-                      controller: inputController,
-                      onEditingComplete: mediaWidth > 820 ? byEmail : null,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Campo vacío';
-                        } else if (!value.isEmail) {
-                          return 'Ingresa un correo válido';
-                        }
-                        return null;
-                      },
+              child: SizedBox(
+                width: 250,
+                child: Tooltip(
+                  preferBelow: true,
+                  message: 'Correo',
+                  child: DataInput(
+                    suffixIcon: Tooltip(
+                      message: 'Buscar usuario',
+                      child: GestureDetector(
+                        onTap: onSearch,
+                        child: const Icon(
+                          Icons.search,
+                          color: primaryColor,
+                        ),
+                      ),
                     ),
+                    icon: mediaWidth > 820 ? Icons.search : null,
+                    color: primaryColor,
+                    labelText: 'Correo',
+                    controller: inputController,
+                    onEditingComplete: mediaWidth > 820 ? onSearch : null,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Campo vacío';
+                      } else if (!value.isEmail) {
+                        return 'Ingresa un correo válido';
+                      }
+                      return null;
+                    },
                   ),
                 ),
-                if (mediaWidth < 820)
-                  Tooltip(
-                    message: 'Validar usuario',
-                    child: GestureDetector(
-                        onTap: byEmail,
-                        child: const Material(
-                          color: backgroundColor,
-                          elevation: 2,
-                          child: Icon(Icons.search),
-                        )),
-                  ),
-              ],
-            )),
+              ),
+            ),
           ]),
           TableRow(children: [
             Column(
@@ -177,7 +172,7 @@ class _DeleteUserPageState extends State<DeleteUserPage> {
             )));
   }
 
-  void byEmail() async {
+  void onSearch() async {
     try {
       final input = inputController.value.text;
       if (_formKey.currentState!.validate()) {

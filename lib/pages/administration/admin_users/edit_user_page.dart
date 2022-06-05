@@ -61,9 +61,19 @@ class _EditUserPageState extends State<EditUserPage> {
                   alignment: Alignment.center,
                   child: Column(children: [
                     DataInput(
+                        suffixIcon: Tooltip(
+                          message: 'Buscar usuario',
+                          child: GestureDetector(
+                            onTap: onSearch,
+                            child: const Icon(
+                              Icons.search,
+                              color: primaryColor,
+                            ),
+                          ),
+                        ),
                         enabled: !enableToEdit,
                         width: double.infinity,
-                        onEditingComplete: mediaWidth > 820 ? byEmail : null,
+                        onEditingComplete: mediaWidth > 820 ? onSearch : null,
                         validator: ((value) {
                           if (value!.isEmpty) {
                             return 'Ingresa un correo';
@@ -76,30 +86,6 @@ class _EditUserPageState extends State<EditUserPage> {
                         color: primaryColor,
                         labelText: 'Correo',
                         controller: emailController),
-                    if (mediaWidth < 820)
-                      Tooltip(
-                        message: 'Validar usuario',
-                        child: GestureDetector(
-                          onTap: byEmail,
-                          child: Material(
-                            color: primaryColor,
-                            elevation: 2,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: const [
-                                Icon(
-                                  Icons.search,
-                                  color: Colors.white,
-                                ),
-                                Text(
-                                  'Buscar',
-                                  style: TextStyle(color: Colors.white),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
                     DataInput(
                         validator: ((value) {
                           if (enableToEdit && isNotEmailInput) {
@@ -220,7 +206,7 @@ class _EditUserPageState extends State<EditUserPage> {
     }
   }
 
-  void byEmail() async {
+  void onSearch() async {
     setState(() {
       isNotEmailInput = false;
     });

@@ -390,10 +390,18 @@ class _FormAddWineState extends State<FormAddWine> {
               ),
               Column(
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     height: 30,
                     width: double.infinity,
-                    child: Text('Blem'),
+                    child: Row(
+                      children: [
+                        const Text('Blem'),
+                        const Spacer(),
+                        HelpTooltip(
+                            message:
+                                'Si se obtiene el caldo del mismo varietal de 2 o más tanques \nen la sección de Observaciones indica el nombre \nde los demás tanques usados (Ej. Tanque 3) para realizar los ajustes')
+                      ],
+                    ),
                   ),
                   Material(
                     elevation: 2,

@@ -22,7 +22,6 @@ class _AdminTanksPageState extends State<AdminTanksPage> {
   late TankServices tankServices;
   bool errorTankExist = false;
   final _formKey = GlobalKey<FormState>();
-
   @override
   void initState() {
     super.initState();
@@ -57,7 +56,7 @@ class _AdminTanksPageState extends State<AdminTanksPage> {
             child: Form(
               key: _formKey,
               child: Container(
-                height: mediaWidth > 820 ? 700 : mediaHeight - 250,
+                height: mediaWidth > 820 ? 600 : mediaHeight - 250,
                 width: mediaWidth > 820 ? 500 : double.infinity,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
@@ -80,6 +79,13 @@ class _AdminTanksPageState extends State<AdminTanksPage> {
                                 GestureDetector(
                                   onTap: reloadData,
                                   child: const Icon(Icons.refresh),
+                                ),
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                HelpTooltip(
+                                  message:
+                                      'Para eliminar un tanque:\n1. Los litros deben estar en 0\n2. No debe tener un blem asignado\n(Eliminar blem)',
                                 )
                               ],
                             )),
@@ -145,7 +151,7 @@ class _AdminTanksPageState extends State<AdminTanksPage> {
                     TableRow(children: [
                       Center(
                         child: SizedBox(
-                          height: mediaWidth > 820 ? 580 : mediaHeight - 370,
+                          height: mediaWidth > 820 ? 480 : mediaHeight - 370,
                           width: 250,
                           child: ListView.builder(
                             primary: false,
@@ -263,6 +269,7 @@ class _AdminTanksPageState extends State<AdminTanksPage> {
                                                                                 brothOrMixture: '',
                                                                                 tankId: listTanks[index].tankId!));
                                                                             await reloadData();
+                                                                            tankConfirmController.clear();
                                                                             Navigator.pop(
                                                                               context,
                                                                             );

@@ -14,7 +14,6 @@ import 'package:gi_vinification_retorno/styles/const.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-//borrar
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

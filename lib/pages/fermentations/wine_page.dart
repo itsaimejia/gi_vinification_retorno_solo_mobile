@@ -10,6 +10,7 @@ import 'package:gi_vinification_retorno/services/varietal_services.dart';
 import 'package:gi_vinification_retorno/services/wine_services.dart';
 import 'package:gi_vinification_retorno/styles/const.dart';
 import 'package:gi_vinification_retorno/widgets/show_forms.dart';
+import 'package:gi_vinification_retorno/widgets/widgets_forms.dart';
 import 'package:gi_vinification_retorno/widgets/widgets_pages.dart';
 import 'package:gi_vinification_retorno/widgets/widgets_tables.dart';
 import 'package:provider/provider.dart';
@@ -68,9 +69,18 @@ class _WinePageState extends State<WinePage> {
         await showDialog(
             context: context,
             builder: (__) => AlertDialog(
-                title: const Text(
-                  "Configurar blem de tanques",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                title: Row(
+                  children: [
+                    const Text(
+                      "Configurar blem de tanques",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
+                    const Spacer(),
+                    HelpTooltip(
+                        message:
+                            'En caso que el tanque a utilizar no se encuentre disponible\n para configurar, verifica que no esté con un blem definido\nEn caso de tener un blem solicita al administrador que \nElimine el blem del tanque que necesitas.\n\nSi las opciones Caldo/Mezcla se encuentran bloqueadas\nse debe a que no hay tanques sin blem definido\nSolicita al administrador que dé de alta un nuevo tanque.')
+                  ],
                 ),
                 elevation: 5,
                 backgroundColor: Colors.white,

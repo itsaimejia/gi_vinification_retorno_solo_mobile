@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 import 'package:flutter/material.dart';
 import 'package:gi_vinification_retorno/styles/const.dart';
 
@@ -356,5 +358,30 @@ class CheckBoxCustom extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class HelpTooltip extends StatelessWidget {
+  final String message;
+
+  HelpTooltip({Key? key, required this.message}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final key = GlobalKey<State<Tooltip>>();
+    return Tooltip(
+      key: key,
+      message: message,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => _onTap(key),
+        child: const Icon(Icons.help),
+      ),
+    );
+  }
+
+  void _onTap(GlobalKey key) {
+    final dynamic tooltip = key.currentState;
+    tooltip?.ensureTooltipVisible();
   }
 }

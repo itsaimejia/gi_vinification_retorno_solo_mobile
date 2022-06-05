@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gi_vinification_retorno/bundle.dart';
 import 'package:gi_vinification_retorno/models/globals.dart';
 import 'package:gi_vinification_retorno/models/user_model.dart';
-import 'package:gi_vinification_retorno/pages/dashboard/dashboard_page.dart';
+import 'package:gi_vinification_retorno/pages/dashboard/principal_page.dart';
 import 'package:gi_vinification_retorno/pages/account_not_found.page.dart';
 import 'package:gi_vinification_retorno/pages/login_page.dart';
 import 'package:gi_vinification_retorno/services/user_services.dart';
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
   bool reSize = false;
 
   Map pages = {
-    0: {'title': 'Dashboard', 'page': DashboardPage()},
+    0: {'title': 'Inicio', 'page': PrincipalPage()},
     1: {'title': 'Recepción Uva', 'page': const GrapeReceptionPage()},
     2: {'title': 'Análisis', 'page': const AnalisisPage()},
     3: {'title': 'Fermentaciones', 'page': const FermentationsPage()},
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SideMenuItem(
               permission: true,
-              label: "Dashboard",
+              label: "Inicio",
               icon: Icons.dashboard,
               labelColor: Colors.white,
               color: indexPage != 0 ? primaryColor : secundaryColor,

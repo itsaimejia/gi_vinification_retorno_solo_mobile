@@ -24,7 +24,6 @@ class WineServices extends ChangeNotifier {
       loadData = false;
       notifyListeners();
     } catch (e) {
-      print(e);
       loadData = false;
       notifyListeners();
     }

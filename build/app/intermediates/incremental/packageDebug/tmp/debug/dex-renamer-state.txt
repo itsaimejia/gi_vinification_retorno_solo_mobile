@@ -1,4 +1,4 @@
-#Sat Jun 04 19:34:00 PDT 2022
+#Sat Jun 04 19:42:54 PDT 2022
 base.2=C\:\\Users\\itsai\\Documents\\GitHub\\gi_vinification_retorno_solo_mobile\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=C\:\\Users\\itsai\\Documents\\GitHub\\gi_vinification_retorno_solo_mobile\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
