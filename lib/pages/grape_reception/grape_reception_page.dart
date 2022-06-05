@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:gi_vinification_retorno/models/globals.dart';
 import 'package:gi_vinification_retorno/models/grape_reception_model.dart';
-import 'package:gi_vinification_retorno/pages/grape_reception/widgets/excel_grape_reception.dart';
 import 'package:gi_vinification_retorno/pages/grape_reception/widgets/forms_grape_reception.dart';
 import 'package:gi_vinification_retorno/services/grape_reception_services.dart';
 import 'package:gi_vinification_retorno/services/varietal_services.dart';
@@ -192,14 +191,6 @@ class _GrapeReceptionPageState extends State<GrapeReceptionPage> {
                               const SizedBox(
                                 width: 15,
                               ),
-                            if (mediaWidth > 820)
-                              ExcelButton(onPressed: () async {
-                                await reloadData();
-                                if (listGrapeReception.isNotEmpty) {
-                                  createExcelGrapeReception(
-                                      listGrapeReception: listGrapeReception);
-                                }
-                              })
                           ],
                         )),
                   ]),

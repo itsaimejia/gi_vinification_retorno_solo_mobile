@@ -6,7 +6,6 @@ import 'package:gi_vinification_retorno/admin/new_user_form.dart';
 import 'package:gi_vinification_retorno/services/user_services.dart';
 import 'package:gi_vinification_retorno/styles/const.dart';
 import 'package:provider/provider.dart';
-import 'dart:html' as html;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -83,7 +82,6 @@ class _LoginPageState extends State<LoginPage> {
           await FirebaseAuth.instance.signInWithEmailAndPassword(
               email: emailController.text.trim(),
               password: passwordController.text.trim());
-          html.window.location.reload();
         } catch (e) {
           setState(() {
             errorLogin = true;

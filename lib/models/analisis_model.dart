@@ -51,7 +51,7 @@ class Analisis {
     'Brix',
     'PH',
     'Análisis',
-    'Item Analizado',
+    'Item',
     'Observ.',
     'Acciones'
   ];

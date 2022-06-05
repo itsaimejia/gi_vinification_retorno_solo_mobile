@@ -26,7 +26,7 @@ class Wine {
       : date = map['date'],
         type = map['type'],
         blem = map['blem'],
-        liters = map['liters'],
+        liters = double.parse(map['liters'].toString()),
         anada = map['anada'],
         tankName = map['tank_name'],
         ranch = map['ranch'],

@@ -14,7 +14,7 @@ class Tank {
 
   factory Tank.fromMap(Map<String, dynamic> map) => Tank(
       blem: map['blem'],
-      liters: map["liters"],
+      liters: double.parse(map["liters"].toString()),
       wineType: map['wine_type'],
       brothOrMixture: map['broth_or_mixture']);
 

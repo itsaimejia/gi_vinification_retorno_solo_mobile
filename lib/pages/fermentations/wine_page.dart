@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:gi_vinification_retorno/models/globals.dart';
 import 'package:gi_vinification_retorno/models/wine_model.dart';
-import 'package:gi_vinification_retorno/pages/fermentations/widgets/excel_wines.dart';
 import 'package:gi_vinification_retorno/pages/fermentations/widgets/form_configure_tanks.dart';
 import 'package:gi_vinification_retorno/pages/fermentations/widgets/forms_wine.dart';
 import 'package:gi_vinification_retorno/services/tank_services.dart';
@@ -248,13 +247,6 @@ class _WinePageState extends State<WinePage> {
                               const SizedBox(
                                 width: 15,
                               ),
-                            if (mediaWidth > 820)
-                              ExcelButton(onPressed: () async {
-                                await reloadData();
-                                if (listWines.isNotEmpty) {
-                                  createExcelWines(listWines: listWines);
-                                }
-                              })
                           ],
                         )),
                   ]),
@@ -479,7 +471,6 @@ class _WinePageState extends State<WinePage> {
         columnSpacing: mediaWidth > 820 ? 10 : 4,
         headingRowHeight: mediaWidth > 820 ? 45 : 25,
         showCheckboxColumn: false,
-        
         columns: List<DataColumn>.generate(
             Wine.titles.length,
             (index) => DataColumn(

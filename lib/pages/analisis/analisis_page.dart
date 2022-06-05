@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:gi_vinification_retorno/models/analisis_model.dart';
 import 'package:gi_vinification_retorno/models/globals.dart';
-import 'package:gi_vinification_retorno/pages/analisis/widgets/excel_analisis.dart';
 import 'package:gi_vinification_retorno/pages/analisis/widgets/forms_analisis.dart';
 import 'package:gi_vinification_retorno/services/analisis_services.dart';
 import 'package:gi_vinification_retorno/services/grape_reception_services.dart';
@@ -190,14 +189,6 @@ class _AnalisisPageState extends State<AnalisisPage> {
                               const SizedBox(
                                 width: 15,
                               ),
-                            if (mediaWidth > 820)
-                              ExcelButton(onPressed: () async {
-                                await reloadData();
-                                if (listAnalisis.isNotEmpty) {
-                                  createExcelAnalisis(
-                                      listAnalisis: listAnalisis);
-                                }
-                              })
                           ],
                         )),
                   ]),

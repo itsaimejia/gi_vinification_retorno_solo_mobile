@@ -119,7 +119,7 @@ class _FormConfigureTankState extends State<FormConfigureTank> {
       child: Form(
         key: _formKey,
         child: SizedBox(
-          height: 500,
+          height: 520,
           width: 400,
           child: Column(
             children: [

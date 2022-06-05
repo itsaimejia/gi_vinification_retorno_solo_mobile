@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">94569713095-il45e3kih5m7h7pchhqvfmrj3mt62alu.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">94569713095</string>
+    <string name="google_api_key" translatable="false">AIzaSyBHUcNMaOG2lgqZEIPmJX1xsV1PjdwXmKc</string>
+    <string name="google_app_id" translatable="false">1:94569713095:android:05c03731e221a460d55de2</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBHUcNMaOG2lgqZEIPmJX1xsV1PjdwXmKc</string>
+    <string name="google_storage_bucket" translatable="false">givinificationelretorno.appspot.com</string>
+    <string name="project_id" translatable="false">givinificationelretorno</string>
+</resources>

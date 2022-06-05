@@ -24,6 +24,7 @@ class DashboardPage extends StatelessWidget {
     tankServices = Provider.of<TankServices>(context);
     varietalServices.getList();
     tankServices.getList();
+
     return mediaWidth > 820
         ? Table(
             children: [

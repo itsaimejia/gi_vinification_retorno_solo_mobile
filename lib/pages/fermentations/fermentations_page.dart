@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:gi_vinification_retorno/models/fermentation_model.dart';
 import 'package:gi_vinification_retorno/models/globals.dart';
-import 'package:gi_vinification_retorno/pages/fermentations/widgets/excel_fermentations.dart';
 import 'package:gi_vinification_retorno/pages/fermentations/widgets/forms_fermentations.dart';
 import 'package:gi_vinification_retorno/services/fermentations_services.dart';
 import 'package:gi_vinification_retorno/styles/const.dart';
@@ -177,14 +176,6 @@ class _FermentationsPageState extends State<FermentationsPage> {
                               const SizedBox(
                                 width: 15,
                               ),
-                            if (mediaWidth > 820)
-                              ExcelButton(onPressed: () async {
-                                await reloadData();
-                                if (listFermentations.isNotEmpty) {
-                                  createExcelFermentations(
-                                      listFermentations: listFermentations);
-                                }
-                              })
                           ],
                         )),
                   ]),
