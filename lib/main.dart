@@ -17,15 +17,7 @@ import 'package:provider/provider.dart';
 //borrar
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      name: 'aas',
-      options: const FirebaseOptions(
-          apiKey: "AIzaSyCbydZyIjB5noNr66HiOsV6UcGPHuKP2mY",
-          authDomain: "givinificationelretorno.firebaseapp.com",
-          projectId: "givinificationelretorno",
-          storageBucket: "givinificationelretorno.appspot.com",
-          messagingSenderId: "94569713095",
-          appId: "1:94569713095:web:706b2d5d78d065f4d55de2"));
+  await Firebase.initializeApp();
   runApp(const AppProvider());
 }
 
