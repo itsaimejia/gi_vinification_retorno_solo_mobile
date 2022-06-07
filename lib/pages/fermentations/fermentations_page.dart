@@ -352,7 +352,6 @@ class _FermentationsPageState extends State<FermentationsPage> {
                             if (response) {
                               await reloadData();
                             }
-                            await reloadData();
                           } catch (e) {}
                           await reloadData();
                         },

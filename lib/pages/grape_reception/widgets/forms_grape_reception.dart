@@ -402,7 +402,7 @@ class FormDeleteGrapeReception extends StatelessWidget {
   Widget build(BuildContext context) {
     var mediaWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: mediaWidth > 820 ? 400 : 500,
+      height: mediaWidth > 820 ? 400 : 400,
       width: 400,
       child: Column(
         children: [

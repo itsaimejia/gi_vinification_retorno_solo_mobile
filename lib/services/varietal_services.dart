@@ -10,7 +10,6 @@ class VarietalServices extends ChangeNotifier {
   VarietalServices() {
     collection = FirebaseFirestore.instance.collection('varietals');
   }
-
   Future getList() async {
     try {
       QuerySnapshot snapshot = await collection.get();

@@ -104,7 +104,7 @@ class _DeleteUserPageState extends State<DeleteUserPage> {
         builder: (_) => AlertDialog(
             title: const Text('Confirmar'),
             content: SizedBox(
-              height: 200,
+              height: 270,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -174,7 +174,7 @@ class _DeleteUserPageState extends State<DeleteUserPage> {
 
   void onSearch() async {
     try {
-      final input = inputController.value.text;
+      final input = inputController.value.text.trim();
       if (_formKey.currentState!.validate()) {
         await userServices.getByEmail(input).then(
           (value) {

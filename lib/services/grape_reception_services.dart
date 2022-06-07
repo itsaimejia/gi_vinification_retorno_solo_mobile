@@ -36,7 +36,7 @@ class GrapeReceptionServices extends ChangeNotifier {
 
   Future get(String id) async {
     try {
-      final snapshot = await collection.doc(id).get();
+      DocumentSnapshot<Object?> snapshot = await collection.doc(id).get();
       return snapshot.exists
           ? GrapeReception.fromMap(snapshot.data() as Map<String, dynamic>)
           : null;

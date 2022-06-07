@@ -285,7 +285,7 @@ class FormDeleteFermentation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 180,
+      height: 200,
       width: 200,
       child: Column(
         children: [

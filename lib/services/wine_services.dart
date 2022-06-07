@@ -17,7 +17,6 @@ class WineServices extends ChangeNotifier {
         listData = snapshot.docs.map((doc) {
           final result = Wine.fromMap(doc.data() as Map<String, dynamic>);
           result.id = doc.id;
-          result.blem = result.blem;
           return result;
         }).toList();
       }

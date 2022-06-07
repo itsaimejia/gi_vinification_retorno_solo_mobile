@@ -414,7 +414,6 @@ class _GrapeReceptionPageState extends State<GrapeReceptionPage> {
                     )
                   ]);
         }).toList();
-
     return DataTable(
         horizontalMargin: 10,
         headingRowColor:

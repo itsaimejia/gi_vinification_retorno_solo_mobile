@@ -66,13 +66,13 @@ class Wine {
   }
 }
 
-class Blem {
+class BlemWine {
   final int percentage;
   final String varietal;
   final String? tankUsed;
   final double quantityUsed;
 
-  Blem({
+  BlemWine({
     required this.quantityUsed,
     this.tankUsed,
     required this.percentage,

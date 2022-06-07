@@ -82,13 +82,7 @@ class _AdminUsersPageState extends State<AdminUsersPage> {
                             height: 30,
                             width: 100,
                             decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                    color: index == 1
-                                        ? Colors.red
-                                        : backgroundColor,
-                                    width: 1),
-                              ),
+                              color: index == 1 ? Colors.red : backgroundColor,
                             ),
                             child: const Text(
                               'Eliminar',

@@ -11,7 +11,6 @@ class AnalisisServices extends ChangeNotifier {
   AnalisisServices() {
     collection = FirebaseFirestore.instance.collection('analisis');
   }
-
   Future getList() async {
     try {
       QuerySnapshot snapshot = await collection.get();
@@ -28,8 +27,6 @@ class AnalisisServices extends ChangeNotifier {
       loadData = false;
       notifyListeners();
     }
-    loadData = false;
-    notifyListeners();
   }
 
   Future get(String id) async {

@@ -83,7 +83,7 @@ class _FormAddWineState extends State<FormAddWine> {
         final liters = double.parse(litersController.value.text);
 
         if (brothChecked) {
-          final blemBroth = Blem(
+          final blemBroth = BlemWine(
               quantityUsed: double.parse(controllersQuantityUsed[0].value.text),
               percentage: int.parse(controllersPercentage[0].value.text),
               varietal: controllersVarietal[0].value.text);
@@ -124,9 +124,9 @@ class _FormAddWineState extends State<FormAddWine> {
             });
           }
         } else {
-          List<Blem> listBlem = [];
+          List<BlemWine> listBlem = [];
           for (var i = 0; i < controllersPercentage.length; i++) {
-            listBlem.add(Blem(
+            listBlem.add(BlemWine(
                 percentage: int.parse(controllersPercentage[i].value.text),
                 varietal: controllersVarietal[i].value.text,
                 tankUsed: controllersTankUsed[i].value.text,
@@ -646,7 +646,7 @@ class FormDeleteWine extends StatelessWidget {
               wineType: getTank.wineType,
               tankId: getTank.tankId));
           final blemFormat = wine.blem.split('-');
-          final blemBroth = Blem(
+          final blemBroth = BlemWine(
               quantityUsed: double.parse(blemFormat[2]),
               percentage: int.parse(blemFormat[1]),
               varietal: blemFormat[0]);
@@ -676,7 +676,7 @@ class FormDeleteWine extends StatelessWidget {
           for (var i = 0; i < listBlemFormat.length; i++) {
             final currentBlemFormat =
                 listBlemFormat[i].split('-').map((e) => e.trim()).toList();
-            Blem currentBlem = Blem(
+            BlemWine currentBlem = BlemWine(
                 quantityUsed: double.parse(currentBlemFormat[3]),
                 percentage: int.parse(currentBlemFormat[1]),
                 varietal: currentBlemFormat[0],

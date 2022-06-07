@@ -212,7 +212,7 @@ class _EditUserPageState extends State<EditUserPage> {
     });
     try {
       if (_formKey.currentState!.validate()) {
-        final email = emailController.value.text;
+        final email = emailController.value.text.trim();
         await userServices.getByEmail(email).then(
           (value) {
             if (value == null) {

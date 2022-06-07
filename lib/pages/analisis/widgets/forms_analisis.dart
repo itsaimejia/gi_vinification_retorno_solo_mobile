@@ -68,7 +68,7 @@ class _FormAddAnalisisState extends State<FormAddAnalisis> {
     return Form(
       key: _formKey,
       child: SizedBox(
-        height: 470,
+        height: 490,
         width: 310,
         child: Column(
           children: [

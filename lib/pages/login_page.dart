@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gi_vinification_retorno/admin/new_user_form.dart';
+import 'package:gi_vinification_retorno/pages/home_page.dart';
 import 'package:gi_vinification_retorno/services/user_services.dart';
 import 'package:gi_vinification_retorno/styles/const.dart';
 import 'package:provider/provider.dart';
@@ -82,6 +83,10 @@ class _LoginPageState extends State<LoginPage> {
           await FirebaseAuth.instance.signInWithEmailAndPassword(
               email: emailController.text.trim(),
               password: passwordController.text.trim());
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
         } catch (e) {
           setState(() {
             errorLogin = true;
@@ -90,9 +95,9 @@ class _LoginPageState extends State<LoginPage> {
                   'Estás registrado, pero tu contraseña es incorrecta';
               buttonIndex = 1;
             } else if (e.toString().contains('firebase_auth/invalid-email')) {
-              errorMessage = 'Revisa que el correo este bien escrito';
+              errorMessage = 'Revisa que el correo esté bien escrito';
             } else if (e.toString().contains('firebase_auth/user-not-found')) {
-              errorMessage = 'Usuario no resgitrado';
+              errorMessage = 'Usuario no registrado';
             } else if (e
                 .toString()
                 .contains('firebase_auth/too-many-requests')) {
