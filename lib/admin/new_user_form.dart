@@ -200,61 +200,8 @@ class _NewUserPageState extends State<NewUserPage> {
         final response = await userServices.add(user);
         if (response) {
           try {
-            final userDecition = await showDialog(
-                context: context,
-                builder: (_) => AlertDialog(
-                        titleTextStyle: const TextStyle(fontSize: 20),
-                        title: const Text(
-                          'Usuario registrado',
-                        ),
-                        content: const Text.rich(TextSpan(children: [
-                          TextSpan(
-                            text:
-                                'Solicita a tu administrador que te asigne un rol\n\n',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          TextSpan(
-                            children: [
-                              TextSpan(text: 'Presiona '),
-                              TextSpan(
-                                text: 'Continuar ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(
-                                  text:
-                                      'si deseas ingresar al sistema como invitado\n'),
-                            ],
-                          ),
-                          TextSpan(
-                            children: [
-                              TextSpan(text: 'Presiona '),
-                              TextSpan(
-                                text: 'Salir ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(
-                                  text:
-                                      'si deseas regresar a la pantalla de Inicio\n'),
-                            ],
-                          )
-                        ])),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.pop(context, false),
-                            child: const Text(
-                              'Salir',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () => Navigator.pop(context, true),
-                            child: const Text(
-                              'Continuar',
-                              style: TextStyle(color: Colors.green),
-                            ),
-                          ),
-                        ]));
-            if (userDecition) {
+            final userDecision = await buildMessageDecision();
+            if (userDecision) {
               await Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (__) => const MainApp()));
             } else {
@@ -292,6 +239,63 @@ class _NewUserPageState extends State<NewUserPage> {
         }
       }
     }
+  }
+
+  Future<dynamic> buildMessageDecision() {
+    return showDialog(
+              context: context,
+              builder: (_) => AlertDialog(
+                      titleTextStyle: const TextStyle(fontSize: 20),
+                      title: const Text(
+                        'Usuario registrado',
+                      ),
+                      content: const Text.rich(TextSpan(children: [
+                        TextSpan(
+                          text:
+                              'Solicita a tu administrador que te asigne un rol\n\n',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        TextSpan(
+                          children: [
+                            TextSpan(text: 'Presiona '),
+                            TextSpan(
+                              text: 'Continuar ',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            TextSpan(
+                                text:
+                                    'si deseas ingresar al sistema como invitado\n'),
+                          ],
+                        ),
+                        TextSpan(
+                          children: [
+                            TextSpan(text: 'Presiona '),
+                            TextSpan(
+                              text: 'Salir ',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            TextSpan(
+                                text:
+                                    'si deseas regresar a la pantalla de Inicio\n'),
+                          ],
+                        )
+                      ])),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, false),
+                          child: const Text(
+                            'Salir',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, true),
+                          child: const Text(
+                            'Continuar',
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        ),
+                      ]));
   }
 
   void clearForm() {

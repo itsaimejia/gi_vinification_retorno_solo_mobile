@@ -43,7 +43,7 @@ class ActionsIndexTable extends StatelessWidget {
             child: Tooltip(
               message: 'Eliminar',
               child: Icon(
-                Icons.remove,
+                Icons.cancel_rounded,
                 color: enabled ? Colors.red : Colors.grey.shade800,
                 size: iconSize ?? 25,
               ),
